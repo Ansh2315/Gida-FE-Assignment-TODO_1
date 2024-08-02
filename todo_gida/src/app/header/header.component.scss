@@ -1,0 +1,30 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 2.6rem;
+  height: 80px;
+}
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 230px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+
+  .text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+// Mobile View
+@media (max-width: 600px) {
+  .main-header {
+    margin-inline: 0.6rem;
+  }
+}

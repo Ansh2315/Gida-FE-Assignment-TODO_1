@@ -1,0 +1,56 @@
+<div class="main-container content-gap">
+  <div class="main-label">
+    <label class="roboto-medium" for="">Hello,</label>
+    <label>Get started by creating your first checklist.</label>
+  </div>
+  <ng-container>
+    <div class="main-body">
+      <div class="task-content">
+        <div class="task">
+          <span>
+            <input class="input-field roboto-medium" type="text" [(ngModel)]="title">
+          </span>
+          <div class="break-line"></div>
+          <div class="task-container">
+            <div class="each-task-container" *ngFor="let item of taskList">
+              <div class="center-align">
+                <input class="me-2" type="checkbox" (click)="checkCompletedItems()" [(ngModel)]="item['completed']">
+                <input placeholder="Title..." [ngClass]="item['completed'] ? 'strike-through' : ''"
+                  class="input-field-task" type="text" [(ngModel)]="item['title']">
+              </div>
+              <div class="center-align">
+                <em class="fa fa-angle-up mx-1" [ngClass]="item['completed'] ? 'disabled': ''" aria-hidden="true"></em>
+                <em class="fa fa-angle-down mx-1" [ngClass]="['',null].includes(item['title']) ? 'disabled': ''"
+                  aria-hidden="true"></em>
+                <em class="fa fa-trash-o mx-1 cursor-pointer" (click)="deleteTask(item)" aria-hidden="true"></em>
+              </div>
+            </div>
+          </div>
+          <div class="break-line"></div>
+        </div>
+        <div class="footer">
+          <div class="grey-font">
+            <i class="fa fa-eye me-2" aria-hidden="true"></i>
+            <span>
+              <span for="">Completed {{moreInfo.completed}} of {{moreInfo.total}}</span>
+            </span>
+          </div>
+          <div>
+            <span class="add-task-btn" (click)="addTask()">
+              <i class="fa fa-plus pe-2" aria-hidden="true"></i>
+              <label class="cursor-pointer" for="">Add Task</label>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="d_none">
+        <div class="sign-up">
+          <span class="text-center">
+            Sign up to unlock recurring tasks, publishing, collaborating and more.
+          </span>
+          <button class="btn btn-primary">Sign up</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

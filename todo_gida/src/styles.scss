@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #5932ea;
+}
+
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.main-container {
+  font-family: "Roboto", sans-serif;
+  background-color:#f6f6f6;
+}
+
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border: 1px solid grey;
+  appearance: none; /* Removes the default checkbox style */
+  -webkit-appearance: none; /* Removes the default checkbox style for WebKit browsers */
+  -moz-appearance: none; /* Removes the default checkbox style for Firefox */
+  border-radius: 1px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #502dd3; /* Background color when checked */
+  // border: 2px solid grey;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "\2713"; /* Checkmark */
+  font-size: 9px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.disabled {
+  color: #A9A9A9; /* Gray text color */
+  cursor: not-allowed; /* Show a not-allowed cursor */
+  pointer-events: none; /* Prevent any interaction */
+  opacity: 0.6; /* Reduce opacity for a faded look */
+}
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus {
+  background-color: var(--primary-color);
+}
+
+.custom-popover {
+  transform: translate(-50px, 70px) !important;
+
+  .popover-arrow {
+    display: none !important;
+  }
+}
+
+
+.mobile-only {
+  display: none;
+}
+
+/* Desktop Styles (1024px and above) */
+@media (max-width: 1024px) {
+
+  .d_none {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
+
+// Mobile View
+@media (max-width: 600px) {
+  .custom-popover {
+    transform: translate(-20px, 70px) !important;
+
+    .popover-arrow {
+      display: none !important;
+    }
+  }
+}
+

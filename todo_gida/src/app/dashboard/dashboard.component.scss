@@ -1,0 +1,147 @@
+@mixin flexProp($direction, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+.content-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-block: 2rem;
+  height: calc(100vh - 80px);
+}
+
+.main-label {
+  display: flex;
+  flex-direction: column;
+  margin-inline: 3rem;
+
+  :nth-child(1) {
+    font-size: large;
+  }
+
+  :nth-child(2) {
+    font-size: small;
+    color: #838992;
+  }
+
+}
+
+
+.input-field,
+.input-field:focus,
+.input-field:focus-visible {
+  border: none;
+  outline: none;
+  font-size: x-large;
+}
+
+.main-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: center;
+
+  .task-content {
+    background-color: #fff;
+    margin-inline: 3rem;
+    padding: 2rem;
+    border-radius: 10px;
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        padding-block: 1rem;
+
+        .add-task-btn {
+          cursor: pointer;
+          padding-inline: 12px;
+          padding-block: 5px;
+          border-radius: 3px;
+        }
+
+        .add-task-btn:hover {
+          background-color: #e3e3e3;
+        }
+      }
+
+    .task {
+
+
+      .task-container {
+        @include flexProp(column, 1.5rem);
+        overflow-y: auto;
+        max-height: calc(100vh - 440px);
+      }
+
+      .break-line {
+        background-color: #e7e7e7;
+        width: 100%;
+        height: 2px;
+        margin-block: 1rem;
+      }
+
+      .each-task-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .strike-through {
+          text-decoration: line-through;
+        }
+
+        .input-field-task:focus,
+        .input-field-task:focus-visible,
+        .input-field-task {
+          border: none;
+          outline: none;
+        }
+      }
+
+
+    }
+  }
+
+  .sign-up {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 230px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+
+    .text-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .grey-font {
+    color: #868686;
+  }
+
+}
+
+/* Desktop Styles (1024px and above) */
+@media (max-width: 1024px) {
+  .main-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .d_none {
+    display: none;
+  }
+}
+/* Desktop Styles (1024px and above) */
+@media (max-width: 600px) {
+  .main-label {
+    margin-inline: 1rem;
+  }
+  .main-body .task-content {
+    margin-inline: 1rem;
+  }
+}

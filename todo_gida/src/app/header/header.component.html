@@ -1,0 +1,17 @@
+<div class="main-header">
+  <span>
+    <img src="assets/icons/check_icon.JPG" alt="todo_icon">
+  </span>
+  <span class="mobile-only" [ngbPopover]="signUpContent" placement="left" container="body"
+    popoverClass="custom-popover">
+    <img src="assets/icons/todo_icon.JPG" alt="star_todo_icon">
+  </span>
+</div>
+<ng-template #signUpContent>
+  <div class="sign-up">
+    <span class="text-center">
+      Sign up to unlock recurring tasks, publishing, collaborating and more.
+    </span>
+    <button class="btn btn-primary">Sign up</button>
+  </div>
+</ng-template>
